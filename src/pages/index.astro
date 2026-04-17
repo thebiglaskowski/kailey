@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import headshot from '../assets/headshot.png';
+import dmdInstagram from '../assets/dmd-instagram.png';
+import personalInfographic from '../assets/personal-infographic.png';
+import benniBuzzLogo from '../assets/benni-buzz-logo.png';
+import { Sparkles, ChartBar, Megaphone } from '@lucide/astro';
+---
+
+<BaseLayout
+  title="Kailey Blakely — Marketing Specialist & Brand Strategist"
+  description="Marketing Specialist and Business Administration student at Ferris State University. Specializing in brand storytelling, digital strategy, and data-driven creative work."
+>
+  <!-- Hero -->
+  <section class="container-wide py-16 md:py-24">
+    <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+      <div class="flex-1 text-center md:text-left">
+        <p class="text-sm font-medium text-tan uppercase tracking-wide mb-3">Marketing Specialist &middot; Class of 2026</p>
+        <h1 class="text-5xl md:text-6xl font-serif text-sage-deep mb-4">Kailey Blakely</h1>
+        <p class="text-xl text-ink mb-3">Marketing Specialist building brands with patience, persistence, and perseverance.</p>
+        <p class="text-ink-soft mb-8">Business Administration student at Ferris State University with a passion for digital strategy, brand storytelling, and data-driven creative work.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="/work" class="btn-primary">View My Work &rarr;</a>
+          <a href="mailto:kaileyblakely95@gmail.com" class="btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+      <div class="flex-shrink-0">
+        <div class="relative">
+          <div class="absolute inset-0 bg-sage/20 rounded-full scale-110"></div>
+          <Image
+            src={headshot}
+            alt="Kailey Blakely headshot"
+            class="relative w-64 md:w-80 rounded-full object-cover"
+            widths={[256, 320, 640]}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Three P's -->
+  <section class="bg-cream-deep py-16">
+    <div class="container-wide">
+      <h2 class="text-3xl font-serif text-sage-deep text-center mb-3">A philosophy that drives the work.</h2>
+      <p class="text-center text-ink-soft max-w-2xl mx-auto mb-12">Every campaign, every analysis, every late-night study session comes back to three principles. They're how I approach problems, how I serve clients, and how I'm building a career.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg p-8 shadow-sm">
+          <h3 class="text-xl font-serif text-sage-deep mb-3">Patience</h3>
+          <p class="text-ink-soft leading-relaxed">Strong brand identities aren't built overnight. I take the time to understand audiences, refine messaging, and let strategy breathe before execution.</p>
+        </div>
+        <div class="bg-white rounded-lg p-8 shadow-sm">
+          <h3 class="text-xl font-serif text-sage-deep mb-3">Persistence</h3>
+          <p class="text-ink-soft leading-relaxed">Whether it's an ad campaign or a financial analysis buried inside a parent company's reports, I keep digging until the answer is clear.</p>
+        </div>
+        <div class="bg-white rounded-lg p-8 shadow-sm">
+          <h3 class="text-xl font-serif text-sage-deep mb-3">Perseverance</h3>
+          <p class="text-ink-soft leading-relaxed">A 3.87 GPA, a Bachelor's in Business, a minor in Marketing, four kids, and a full plate. The work gets done because I don't stop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Do -->
+  <section class="container-wide py-16">
+    <h2 class="text-3xl font-serif text-sage-deep text-center mb-12">What I bring to the table.</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-14 h-14 flex items-center justify-center bg-tan/10 text-tan rounded-full mx-auto mb-4">
+          <Sparkles size={28} />
+        </div>
+        <h3 class="text-xl font-serif text-sage-deep mb-2">Brand Storytelling</h3>
+        <p class="text-ink-soft leading-relaxed">Cohesive identities across digital and traditional channels. From logo design to multi-platform campaigns, I build brands people remember.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-14 h-14 flex items-center justify-center bg-tan/10 text-tan rounded-full mx-auto mb-4">
+          <ChartBar size={28} />
+        </div>
+        <h3 class="text-xl font-serif text-sage-deep mb-2">Data-Driven Strategy</h3>
+        <p class="text-ink-soft leading-relaxed">Google Analytics, HubSpot, and Meta Business Suite turn instinct into evidence. I optimize what works and cut what doesn't.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-14 h-14 flex items-center justify-center bg-tan/10 text-tan rounded-full mx-auto mb-4">
+          <Megaphone size={28} />
+        </div>
+        <h3 class="text-xl font-serif text-sage-deep mb-2">Creative Execution</h3>
+        <p class="text-ink-soft leading-relaxed">Infographics, flyers, blogs, social content, and ad creative — produced in-house and built to convert.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Work -->
+  <section class="bg-cream-deep py-16">
+    <div class="container-wide">
+      <h2 class="text-3xl font-serif text-sage-deep text-center mb-12">Recent work.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/work" class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="aspect-video bg-cream overflow-hidden">
+            <Image src={dmdInstagram} alt="Delta Mu Delta brand identity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-serif text-lg text-sage-deep group-hover:text-sage transition-colors">Delta Mu Delta</h3>
+            <p class="text-sm text-ink-soft">Brand Identity &amp; Recruitment</p>
+          </div>
+        </a>
+        <a href="/work" class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="aspect-video bg-cream overflow-hidden">
+            <Image src={personalInfographic} alt="Personal brand infographic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-serif text-lg text-sage-deep group-hover:text-sage transition-colors">Personal Brand</h3>
+            <p class="text-sm text-ink-soft">Infographic Design</p>
+          </div>
+        </a>
+        <a href="/work" class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="aspect-video bg-cream overflow-hidden">
+            <Image src={benniBuzzLogo} alt="Benni Buzz logo design" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-serif text-lg text-sage-deep group-hover:text-sage transition-colors">Benni Buzz</h3>
+            <p class="text-sm text-ink-soft">Logo Design</p>
+          </div>
+        </a>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/work" class="btn-primary">See the full portfolio &rarr;</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/work', label: 'Work' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="border-b border-cream-deep bg-cream/80 backdrop-blur-sm sticky top-0 z-50">
+  <div class="container-wide flex items-center justify-between py-5">
+    <a href="/" class="font-serif text-xl text-sage-deep hover:text-sage transition-colors">
+      Kailey Blakely
+    </a>
+    <nav class="flex items-center gap-8">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class:list={[
+            'text-sm font-medium transition-colors',
+            currentPath === item.href
+              ? 'text-sage-deep'
+              : 'text-ink-soft hover:text-sage-deep'
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>

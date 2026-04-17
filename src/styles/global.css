@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/inter';
+
+@theme {
+  /* Color palette */
+  --color-cream: #F5F1E8;
+  --color-cream-deep: #EAE3D2;
+  --color-sage: #8FA68E;
+  --color-sage-deep: #5C7259;
+  --color-tan: #C9A876;
+  --color-tan-deep: #A88555;
+  --color-ink: #2C2A26;
+  --color-ink-soft: #5A554B;
+
+  /* Typography */
+  --font-serif: 'Fraunces Variable', Georgia, serif;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    @apply text-sage-deep;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-tan text-white px-6 py-3 rounded-md
+           font-medium hover:bg-tan-deep transition-colors;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border-2 border-sage text-sage-deep
+           px-6 py-3 rounded-md font-medium hover:bg-sage hover:text-white transition-colors;
+  }
+
+  .container-prose {
+    @apply max-w-4xl mx-auto px-6;
+  }
+
+  .container-wide {
+    @apply max-w-6xl mx-auto px-6;
+  }
+}

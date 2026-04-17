@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  description: string;
+  image?: ImageMetadata;
+  images?: ImageMetadata[];
+  imageAlt: string;
+  results?: string[];
+  ctaLabel?: string;
+  ctaHref?: string;
+  pullQuote?: string;
+}
+
+const { title, subtitle, description, image, images, imageAlt, results, ctaLabel, ctaHref, pullQuote } = Astro.props;
+---
+
+<article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+  {image && (
+    <div class="aspect-video bg-cream-deep overflow-hidden">
+      <Image src={image} alt={imageAlt} class="w-full h-full object-cover" />
+    </div>
+  )}
+  {images && images.length > 1 && (
+    <div class="grid grid-cols-2 gap-1 bg-cream-deep">
+      {images.map(img => (
+        <Image src={img} alt={imageAlt} class="w-full aspect-square object-cover" />
+      ))}
+    </div>
+  )}
+  <div class="p-6 md:p-8">
+    <h3 class="text-2xl font-serif text-sage-deep mb-1">{title}</h3>
+    {subtitle && <p class="text-sm text-ink-soft italic mb-4">{subtitle}</p>}
+    <p class="text-ink leading-relaxed mb-4">{description}</p>
+
+    {results && (
+      <div class="bg-cream rounded-md p-4 my-4">
+        <p class="text-sm font-medium text-sage-deep mb-2">Results</p>
+        <ul class="text-sm text-ink space-y-1">
+          {results.map(r => <li>&middot; {r}</li>)}
+        </ul>
+      </div>
+    )}
+
+    {pullQuote && (
+      <blockquote class="border-l-4 border-tan pl-4 my-4 italic text-ink-soft">
+        &ldquo;{pullQuote}&rdquo;
+      </blockquote>
+    )}
+
+    {ctaLabel && ctaHref && (
+      <a href={ctaHref} target={ctaHref.startsWith('http') ? '_blank' : undefined} class="btn-primary mt-2">
+        {ctaLabel} &rarr;
+      </a>
+    )}
+  </div>
+</article>

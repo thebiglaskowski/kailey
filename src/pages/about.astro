@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Download } from '@lucide/astro';
+---
+
+<BaseLayout
+  title="About — Kailey Blakely"
+  description="Business Administration student at Ferris State University with a background in accounting and a passion for marketing. Resume, education, and certifications."
+>
+  <!-- Intro -->
+  <section class="container-prose py-16">
+    <h1 class="text-4xl md:text-5xl font-serif text-sage-deep mb-6">About Kailey</h1>
+    <p class="text-lg text-ink leading-relaxed mb-4">I'm a Business Administration student at Ferris State University with a 3.87 GPA, a minor in Marketing, and a background in accounting that gives me a slightly unusual lens on creative work — I love a beautiful campaign, but I also love the spreadsheet behind it.</p>
+    <p class="text-ink leading-relaxed mb-4">My approach to business is defined by the Three P's: Patience, Persistence, and Perseverance. It's the philosophy that's carried me through a Bachelor's program, a Delta Mu Delta leadership role, and the daily work of building digital identities for real clients. I thrive in positive company cultures where I can contribute to memorable brand storytelling — the kind that connects with people and delivers measurable results.</p>
+    <p class="text-ink leading-relaxed">I specialize in building cohesive digital identities across social, web, and print, and I'm always looking for the next opportunity to turn a good brand into a great one.</p>
+  </section>
+
+  <!-- Resume -->
+  <section class="container-wide py-16 bg-cream-deep">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
+        <div>
+          <h2 class="text-3xl font-serif text-sage-deep mb-1">Resume</h2>
+          <p class="text-ink-soft">The full version, with everything in one place.</p>
+        </div>
+        <a href="/kailey-blakely-resume.pdf" class="btn-primary" target="_blank">
+          <Download size={18} /> Download PDF
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Sidebar -->
+        <div class="space-y-8">
+          <!-- Education -->
+          <div>
+            <h3 class="text-lg font-serif text-sage-deep mb-3 pb-2 border-b border-sage/20">Education</h3>
+            <div class="space-y-4">
+              <div>
+                <p class="font-medium text-ink text-sm">Ferris State University / Southwestern Michigan College</p>
+                <p class="text-sm text-ink-soft">Bachelor of Business Administration, Digital Professional Marketing (Minor)</p>
+                <p class="text-xs text-ink-soft mt-1">Expected May 2026</p>
+              </div>
+              <div>
+                <p class="font-medium text-ink text-sm">Ivy Tech Community College</p>
+                <p class="text-sm text-ink-soft">Associate's, Accounting</p>
+                <p class="text-xs text-ink-soft mt-1">2019</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div>
+            <h3 class="text-lg font-serif text-sage-deep mb-3 pb-2 border-b border-sage/20">Certifications</h3>
+            <ul class="text-sm text-ink space-y-2">
+              <li>Google Analytics Certified</li>
+              <li>HubSpot Social Media Certified</li>
+              <li>Hootsuite Social Listening</li>
+            </ul>
+          </div>
+
+          <!-- Accomplishments -->
+          <div>
+            <h3 class="text-lg font-serif text-sage-deep mb-3 pb-2 border-b border-sage/20">Accomplishments</h3>
+            <ul class="text-sm text-ink space-y-2">
+              <li>Dean's List</li>
+              <li>Delta Mu Delta National Honors Society Member</li>
+              <li>Founded and maintains the Nu Gamma chapter's social media presence</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Main Column -->
+        <div class="md:col-span-2 space-y-8">
+          <!-- Objective -->
+          <div>
+            <h3 class="text-lg font-serif text-sage-deep mb-3 pb-2 border-b border-sage/20">Objective</h3>
+            <p class="text-ink leading-relaxed">Dynamic Marketing Professional with over 2 years of experience driving digital engagement and brand growth. Proven track record of elevating online presence through high-impact creative development and data-backed strategies, including a successful initiative that increased social media engagement by 40% for a professional honors organization. Expert in leveraging Google Analytics, HubSpot, and Meta Business Suite to optimize SEO and audience reach.</p>
+          </div>
+
+          <!-- Experience -->
+          <div>
+            <h3 class="text-lg font-serif text-sage-deep mb-3 pb-2 border-b border-sage/20">Experience</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                  <p class="font-medium text-ink">M&amp;V Pro Services — Social Media Marketing Assistant</p>
+                  <p class="text-xs text-ink-soft whitespace-nowrap">Jan 2022 – May 2023</p>
+                </div>
+                <p class="text-xs text-ink-soft mb-2">South Bend, IN</p>
+                <ul class="text-sm text-ink space-y-1.5 list-disc list-inside">
+                  <li>Executed marketing plans and budgets across multiple brands to drive growth.</li>
+                  <li>Led engagement and visibility on Facebook, Instagram, and Yelp.</li>
+                  <li>Monitored ROI and campaign data to optimize marketing strategies.</li>
+                  <li>Designed infographics and wrote blogs tailored to specific brand voices.</li>
+                  <li>Produced high-quality photography and video for digital platforms.</li>
+                </ul>
+              </div>
+              <div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                  <p class="font-medium text-ink">Eye Care Associates of Michiana — Technician</p>
+                  <p class="text-xs text-ink-soft whitespace-nowrap">May 2023 – Oct 2023</p>
+                </div>
+                <p class="text-xs text-ink-soft mb-2">Mishawaka, IN</p>
+                <ul class="text-sm text-ink space-y-1.5 list-disc list-inside">
+                  <li>Ensured peak equipment performance and safety through diligent operation and routine inspections.</li>
+                  <li>Minimized downtime by rapidly diagnosing and resolving technical issues.</li>
+                  <li>Collaborated with teams to improve operational efficiency and streamline processes.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
