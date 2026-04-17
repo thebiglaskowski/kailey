@@ -1,10 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
-import headshot from '../assets/headshot.png';
-import dmdInstagram from '../assets/dmd-instagram.png';
-import personalInfographic from '../assets/personal-infographic.png';
-import benniBuzzLogo from '../assets/benni-buzz-logo.png';
+import headshot from '../assets/headshot.jpg';
+import { featuredPortfolio } from '../data/portfolio';
 import { Sparkles, ChartBar, Megaphone } from '@lucide/astro';
 ---
 
@@ -94,33 +92,24 @@ import { Sparkles, ChartBar, Megaphone } from '@lucide/astro';
     <div class="container-wide">
       <h2 class="text-3xl font-serif text-sage-deep text-center mb-12">Recent work.</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <a href="/work" class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-          <div class="aspect-video bg-cream overflow-hidden">
-            <Image src={dmdInstagram} alt="Delta Mu Delta brand identity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-5">
-            <h3 class="font-serif text-lg text-sage-deep group-hover:text-sage transition-colors">Delta Mu Delta</h3>
-            <p class="text-sm text-ink-soft">Brand Identity &amp; Recruitment</p>
-          </div>
-        </a>
-        <a href="/work" class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-          <div class="aspect-video bg-cream overflow-hidden">
-            <Image src={personalInfographic} alt="Personal brand infographic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-5">
-            <h3 class="font-serif text-lg text-sage-deep group-hover:text-sage transition-colors">Personal Brand</h3>
-            <p class="text-sm text-ink-soft">Infographic Design</p>
-          </div>
-        </a>
-        <a href="/work" class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-          <div class="aspect-video bg-cream overflow-hidden">
-            <Image src={benniBuzzLogo} alt="Benni Buzz logo design" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-5">
-            <h3 class="font-serif text-lg text-sage-deep group-hover:text-sage transition-colors">Benni Buzz</h3>
-            <p class="text-sm text-ink-soft">Logo Design</p>
-          </div>
-        </a>
+        {featuredPortfolio.map(item => (
+          <a href="/work" class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-video bg-cream overflow-hidden">
+              <Image
+                src={item.image!}
+                alt={item.imageAlt}
+                class:list={[
+                  'w-full h-full group-hover:scale-105 transition-transform duration-300',
+                  item.featured!.fit === 'contain' ? 'object-contain p-4' : 'object-cover',
+                ]}
+              />
+            </div>
+            <div class="p-5">
+              <h3 class="font-serif text-lg text-sage-deep group-hover:text-sage transition-colors">{item.featured!.shortTitle}</h3>
+              <p class="text-sm text-ink-soft">{item.featured!.tag}</p>
+            </div>
+          </a>
+        ))}
       </div>
       <div class="text-center mt-8">
         <a href="/work" class="btn-primary">See the full portfolio &rarr;</a>

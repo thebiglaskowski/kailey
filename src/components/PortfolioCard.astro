@@ -16,17 +16,20 @@ interface Props {
 }
 
 const { title, subtitle, description, image, images, imageAlt, results, ctaLabel, ctaHref, pullQuote } = Astro.props;
+
+const singleImage = image ?? (images?.length === 1 ? images[0] : undefined);
+const gridImages = images && images.length > 1 ? images : undefined;
 ---
 
 <article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-  {image && (
+  {singleImage && (
     <div class="aspect-video bg-cream-deep overflow-hidden">
-      <Image src={image} alt={imageAlt} class="w-full h-full object-cover" />
+      <Image src={singleImage} alt={imageAlt} class="w-full h-full object-cover" />
     </div>
   )}
-  {images && images.length > 1 && (
+  {gridImages && (
     <div class="grid grid-cols-2 gap-1 bg-cream-deep">
-      {images.map(img => (
+      {gridImages.map(img => (
         <Image src={img} alt={imageAlt} class="w-full aspect-square object-cover" />
       ))}
     </div>
@@ -52,7 +55,12 @@ const { title, subtitle, description, image, images, imageAlt, results, ctaLabel
     )}
 
     {ctaLabel && ctaHref && (
-      <a href={ctaHref} target={ctaHref.startsWith('http') ? '_blank' : undefined} class="btn-primary mt-2">
+      <a
+        href={ctaHref}
+        target={ctaHref.startsWith('http') ? '_blank' : undefined}
+        rel={ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+        class="btn-primary mt-2"
+      >
         {ctaLabel} &rarr;
       </a>
     )}

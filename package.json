@@ -1,5 +1,5 @@
 {
-  "name": "astro-temp",
+  "name": "kaileyblakely",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -19,5 +20,9 @@
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.7",
     "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.8",
+    "typescript": "^5.9.3"
   }
 }

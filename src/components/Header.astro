@@ -13,7 +13,7 @@ const currentPath = Astro.url.pathname;
     <a href="/" class="font-serif text-xl text-sage-deep hover:text-sage transition-colors">
       Kailey Blakely
     </a>
-    <nav class="flex items-center gap-8">
+    <nav aria-label="Primary" class="flex items-center gap-8">
       {navItems.map(item => (
         <a
           href={item.href}
