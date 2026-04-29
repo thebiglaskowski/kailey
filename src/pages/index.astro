@@ -96,7 +96,7 @@ import { Sparkles, ChartBar, Megaphone } from '@lucide/astro';
           <a href="/work" class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             <div class="aspect-video bg-cream overflow-hidden">
               <Image
-                src={item.image!}
+                src={(item.image ?? item.images?.[0])!}
                 alt={item.imageAlt}
                 class:list={[
                   'w-full h-full group-hover:scale-105 transition-transform duration-300',
