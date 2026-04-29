@@ -1,6 +1,5 @@
 import type { ImageMetadata } from 'astro';
 import dmdInstagram from '../assets/dmd-instagram.png';
-import dmdCampaign from '../assets/dmd-campaign.jpg';
 import personalInfographic from '../assets/personal-infographic.png';
 import benniBuzzLogo from '../assets/benni-buzz-logo.png';
 import plumbingSpring from '../assets/plumbing-spring-special.jpg';
@@ -32,15 +31,13 @@ export const portfolio: PortfolioItem[] = [
     subtitle: 'Social Media Manager, Nu Gamma Chapter · Ferris State University',
     description:
       'As founding Social Media Manager for the Nu Gamma chapter of the Delta Mu Delta International Honor Society in Business, I built a cohesive brand identity from the ground up — bridging the gap between a national academic organization and the Ferris State student body. I led a multi-channel approach combining a refreshed digital presence with traditional outreach, including a targeted advertisement designed for the business school newspaper.',
-    images: [dmdInstagram, dmdCampaign],
+    image: dmdInstagram,
     imageAlt: 'Delta Mu Delta Instagram graphic and newspaper advertisement',
     results: [
       '40% increase in social media engagement',
       '13 new chapter members recruited from a single newspaper campaign',
       "Established the chapter's visual identity and tone of voice across platforms",
     ],
-    ctaLabel: 'Download Full Campaign (PDF)',
-    ctaHref: '/delta-mu-delta.pdf',
     featured: { shortTitle: 'Delta Mu Delta', tag: 'Brand Identity & Recruitment' },
   },
   {
