@@ -70,6 +70,15 @@ const personSchema = {
 
     <!-- Structured data -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XS553L2R2E" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XS553L2R2E');
+    </script>
   </head>
   <body>
     <Header />

@@ -7,7 +7,7 @@ export const site = {
     href: 'tel:5743837333',
   },
   social: {
-    linkedin: 'https://www.linkedin.com/in/kailey-blakely-3a1114194',
+    linkedin: 'https://www.linkedin.com/in/kailey-blakely/',
     deltaMuDeltaFacebook: 'https://www.facebook.com/profile.php?id=61583214514596',
   },
 } as const;
