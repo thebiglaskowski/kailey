@@ -57,8 +57,8 @@ const gridImages = images && images.length > 1 ? images : undefined;
     {ctaLabel && ctaHref && (
       <a
         href={ctaHref}
-        target={ctaHref.startsWith('http') ? '_blank' : undefined}
-        rel={ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+        target={ctaHref.startsWith('http') || ctaHref.endsWith('.pdf') ? '_blank' : undefined}
+        rel={ctaHref.startsWith('http') || ctaHref.endsWith('.pdf') ? 'noopener noreferrer' : undefined}
         class="btn-primary mt-2"
       >
         {ctaLabel} &rarr;
